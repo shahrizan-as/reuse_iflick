@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panduan Import Kursus — iFlick TVETMARA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- ============================================================
+       SIDEBAR
+       ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+      <div class="brand-title">📚 iFlick TVETMARA</div>
+      <div class="brand-sub">Panduan Pengurusan Kursus</div>
+    </div>
+
+    <div class="sidebar-progress">
+      <div class="progress-label-row">
+        <span class="progress-label-text">Kemajuan Anda</span>
+        <span class="progress-pct" id="progressPct">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-stats-row">
+        <span class="progress-stats">Langkah <span id="curStep">1</span> / <span id="totStep">23</span></span>
+        <button class="btn-reset-progress" onclick="confirmResetProgress()" title="Padam semua kemajuan dan mulakan semula">↺ Reset</button>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" id="sidebarNav">
+
+      <!-- Section: Pengenalan -->
+      <div class="nav-section" data-section="0">
+        <div class="nav-section-title acc-toggle" onclick="toggleSection(this)">
+          <span class="acc-icon">▼</span>
+          <span>📋 Pengenalan</span>
+          <span class="acc-count">3</span>
+        </div>
+        <div class="acc-body">
+          <div class="nav-item" data-target="0" onclick="goToPanel(0)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Selamat Datang</span>
+          </div>
+          <div class="nav-item" data-target="1" onclick="goToPanel(1)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Panduan Guna SIM</span>
+          </div>
+          <div class="nav-item" data-target="2" onclick="goToPanel(2)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Hasil Pembelajaran</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Induksi -->
+      <div class="nav-section" data-section="1">
+        <div class="nav-section-title acc-toggle" onclick="toggleSection(this)">
+          <span class="acc-icon">▼</span>
+          <span>🔍 Induksi</span>
+          <span class="acc-count">4</span>
+        </div>
+        <div class="acc-body">
+          <div class="nav-item" data-target="3" onclick="goToPanel(3)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Apakah Import Kursus?</span>
+          </div>
+          <div class="nav-item" data-target="4" onclick="goToPanel(4)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Import vs Restore vs Backup</span>
+          </div>
+          <div class="nav-item" data-target="5" onclick="goToPanel(5)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Gambaran Keseluruhan</span>
+          </div>
+          <div class="nav-item" data-target="6" onclick="goToPanel(6)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Quiz Induksi</span>
+            <span class="nav-badge quiz">Quiz</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Unit 1 -->
+      <div class="nav-section" data-section="2">
+        <div class="nav-section-title acc-toggle" onclick="toggleSection(this)">
+          <span class="acc-icon">▼</span>
+          <span>🆕 Unit 1 — Cipta Kursus</span>
+          <span class="acc-count">4</span>
+        </div>
+        <div class="acc-body">
+          <div class="nav-item" data-target="7" onclick="goToPanel(7)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">1.1 Dashboard & My Courses</span>
+          </div>
+          <div class="nav-item" data-target="8" onclick="goToPanel(8)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">1.2 New Course</span>
+          </div>
+          <div class="nav-item" data-target="9" onclick="goToPanel(9)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">1.3 Isi Maklumat Kursus</span>
+          </div>
+          <div class="nav-item" data-target="10" onclick="goToPanel(10)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Aktiviti 1 — Susun Langkah</span>
+            <span class="nav-badge act">Aktiviti</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Unit 2 -->
+      <div class="nav-section" data-section="3">
+        <div class="nav-section-title acc-toggle" onclick="toggleSection(this)">
+          <span class="acc-icon">▼</span>
+          <span>📥 Unit 2 — Import Kursus</span>
+          <span class="acc-count">9</span>
+        </div>
+        <div class="acc-body">
+          <div class="nav-item" data-target="11" onclick="goToPanel(11)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.1 Course Management</span>
+          </div>
+          <div class="nav-item" data-target="12" onclick="goToPanel(12)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.2 Pilih Import</span>
+          </div>
+          <div class="nav-item" data-target="13" onclick="goToPanel(13)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.3 Pilih Kursus Sumber</span>
+          </div>
+          <div class="nav-item" data-target="14" onclick="goToPanel(14)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.4 Import Settings</span>
+          </div>
+          <div class="nav-item" data-target="15" onclick="goToPanel(15)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.5 Schema Settings</span>
+          </div>
+          <div class="nav-item" data-target="16" onclick="goToPanel(16)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.6 Semak & Sahkan</span>
+          </div>
+          <div class="nav-item" data-target="17" onclick="goToPanel(17)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.7 Proses Import</span>
+          </div>
+          <div class="nav-item" data-target="18" onclick="goToPanel(18)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">2.8 Import Selesai</span>
+          </div>
+          <div class="nav-item" data-target="19" onclick="goToPanel(19)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Aktiviti 2 — Padankan Langkah</span>
+            <span class="nav-badge act">Aktiviti</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Penutup -->
+      <div class="nav-section" data-section="4">
+        <div class="nav-section-title acc-toggle" onclick="toggleSection(this)">
+          <span class="acc-icon">▼</span>
+          <span>🏁 Penutup</span>
+          <span class="acc-count">3</span>
+        </div>
+        <div class="acc-body">
+          <div class="nav-item" data-target="20" onclick="goToPanel(20)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Rumusan</span>
+          </div>
+          <div class="nav-item" data-target="21" onclick="goToPanel(21)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Penilaian Kendiri</span>
+            <span class="nav-badge quiz">Quiz</span>
+          </div>
+          <div class="nav-item" data-target="22" onclick="goToPanel(22)">
+            <span class="nav-icon">◯</span>
+            <span class="nav-text">Tahniah! 🎉</span>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+  </aside>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="main-content">
+
+    <!-- Top header -->
+    <header class="content-header">
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb" id="breadcrumb">
+        <span>Pengenalan</span>
+        <span class="breadcrumb-sep">›</span>
+        <span id="breadcrumbLeaf">Selamat Datang</span>
+      </div>
+      <div class="header-step-info" id="headerStepInfo">Langkah 1 / 23</div>
+    </header>
+
+    <!-- Panels -->
+    <div class="panels-wrap" id="panelsWrap">
+
+      <!-- ======================================================
+           PANEL 0 — COVER
+           ====================================================== -->
+      <section class="panel active" id="panel-0">
+        <div class="cover-wrap">
+          <div class="cover-logo-badge">📖 iFlick TVETMARA — Self Instructional Material</div>
+          <h1 class="cover-title">Panduan Cipta &amp; Import<br>Kursus dalam iFlick</h1>
+          <p class="cover-subtitle">
+            Modul pembelajaran kendiri yang membimbing anda menguasai proses pengurusan kursus dalam platform iFlick TVETMARA (Moodle) — langkah demi langkah.
+          </p>
+          <div class="cover-chips">
+            <div class="chip"><span class="chip-icon">⏱</span> Anggaran: 15–20 minit</div>
+            <div class="chip"><span class="chip-icon">📊</span> 23 Langkah</div>
+            <div class="chip"><span class="chip-icon">🎯</span> 2 Aktiviti interaktif</div>
+            <div class="chip"><span class="chip-icon">📝</span> 2 Set Quiz</div>
+          </div>
+          <button class="cover-cta" onclick="goToPanel(1)">
+            Mulakan Pembelajaran <span>→</span>
+          </button>
+          <div class="cover-illustration">
+            <div class="illus-card">
+              <div class="illus-card-icon">🆕</div>
+              <div class="illus-card-label">Unit 1</div>
+              <div class="illus-card-sub">Cipta Kursus Baru</div>
+            </div>
+            <div class="illus-card">
+              <div class="illus-card-icon">📥</div>
+              <div class="illus-card-label">Unit 2</div>
+              <div class="illus-card-sub">Import Kandungan Kursus Lama</div>
+            </div>
+            <div class="illus-card">
+              <div class="illus-card-icon">🔍</div>
+              <div class="illus-card-label">Induksi</div>
+              <div class="illus-card-sub">Kenali Konsep Import</div>
+            </div>
+            <div class="illus-card">
+              <div class="illus-card-icon">✏️</div>
+              <div class="illus-card-label">Aktiviti</div>
+              <div class="illus-card-sub">Drag &amp; Drop Interaktif</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 1 — PANDUAN GUNA
+           ====================================================== -->
+      <section class="panel" id="panel-1">
+        <div class="panel-header">
+          <div class="panel-unit-label">📋 Pengenalan</div>
+          <h2 class="panel-title">Cara Guna Modul Ini</h2>
+          <p class="panel-desc">Kenali elemen navigasi sebelum anda mulakan pembelajaran.</p>
+        </div>
+        <div class="panel-body">
+          <div class="objectives-list">
+            <div class="obj-item">
+              <div class="obj-num">→</div>
+              <div class="obj-text">
+                <strong>Navigasi Langkah</strong>
+                Gunakan butang <b>← Sebelumnya</b> dan <b>Seterusnya →</b> di bahagian bawah skrin untuk bergerak antara langkah. Anda juga boleh klik terus pada item di sidebar kiri.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">🖼</div>
+              <div class="obj-text">
+                <strong>Screenshot Interaktif</strong>
+                Klik pada mana-mana gambar skrin untuk zum masuk dan lihat dengan lebih jelas. Perhatikan bulatan merah bernombor — <b>hover</b> di atasnya untuk baca penerangan.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">🎯</div>
+              <div class="obj-text">
+                <strong>Aktiviti Drag &amp; Drop</strong>
+                Seret (<em>drag</em>) kad jawapan dan jatuhkan (<em>drop</em>) ke kotak yang betul. Pada peranti sentuh, <b>ketuk</b> kad untuk pilih, kemudian <b>ketuk</b> kotak destinasi untuk letakkan.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">📝</div>
+              <div class="obj-text">
+                <strong>Quiz</strong>
+                Terdapat 2 set quiz: <b>Quiz Induksi</b> (5 soalan) dan <b>Penilaian Kendiri</b> (8 soalan). Klik pilihan anda, kemudian klik butang "Semak Jawapan". Maklum balas akan terus dipaparkan.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">📊</div>
+              <div class="obj-text">
+                <strong>Bar Kemajuan</strong>
+                Bar hijau di panel kiri menunjukkan kemajuan anda. Ikon ✓ hijau bermakna langkah tersebut telah selesai. Anda boleh kembali semula ke mana-mana langkah yang sudah dilawati.
+              </div>
+            </div>
+          </div>
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Tip:</strong>
+              Modul ini menyimpan kemajuan anda secara automatik dalam pelayar. Jika anda tutup dan buka semula, kemajuan masih akan kekal.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 2 — HASIL PEMBELAJARAN
+           ====================================================== -->
+      <section class="panel" id="panel-2">
+        <div class="panel-header">
+          <div class="panel-unit-label">📋 Pengenalan</div>
+          <h2 class="panel-title">Hasil Pembelajaran</h2>
+          <p class="panel-desc">Selepas menamatkan modul ini, anda akan dapat:</p>
+        </div>
+        <div class="panel-body">
+          <div class="objectives-list">
+            <div class="obj-item">
+              <div class="obj-num">1</div>
+              <div class="obj-text">
+                <strong>Navigasi dashboard iFlick dengan yakin</strong>
+                Menggunakan Quick Links dan menu My Courses untuk akses senarai kursus anda.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">2</div>
+              <div class="obj-text">
+                <strong>Mencipta kursus baru dalam iFlick</strong>
+                Menggunakan fungsi "New course" dan mengisi maklumat asas kursus dengan betul.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">3</div>
+              <div class="obj-text">
+                <strong>Membezakan fungsi Import, Backup dan Restore</strong>
+                Memahami bila perlu guna Import dan apakah yang dibawa/tidak dibawa semasa import.
+              </div>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">4</div>
+              <div class="obj-text">
+                <strong>Melaksanakan proses Import dalam 6 langkah</strong>
+                Menggunakan wizard Import dari Course Management hingga selesai tanpa ralat.
+              </div>
+            </div>
+          </div>
+          <div class="box info">
+            <span class="box-icon">ℹ️</span>
+            <div class="box-body">
+              <strong>Nota Penting:</strong>
+              Modul ini direka untuk pensyarah atau pentadbir kursus yang mempunyai akses <b>Course Creator</b> atau lebih tinggi dalam iFlick TVETMARA.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 3 — INDUKSI: Apakah Import Kursus?
+           ====================================================== -->
+      <section class="panel" id="panel-3">
+        <div class="panel-header">
+          <div class="panel-unit-label">🔍 Induksi</div>
+          <h2 class="panel-title">Apakah Import Kursus?</h2>
+          <p class="panel-desc">Fahami konsep asas sebelum memulakan proses.</p>
+        </div>
+        <div class="panel-body">
+          <div class="step-intro">
+            <div class="step-num">📥</div>
+            <div class="step-content">
+              <h3>Definisi Import dalam Moodle / iFlick</h3>
+              <p>Import kursus ialah proses <strong>menyalin kandungan pengajaran</strong> — seperti topik, aktiviti, fail, dan bank soalan — dari sebuah kursus lama ke dalam kursus baru yang anda sediakan sebagai destinasi.</p>
+            </div>
+          </div>
+
+          <div class="box ok">
+            <span class="box-icon">✅</span>
+            <div class="box-body">
+              <strong>Bila perlu guna Import?</strong>
+              <ul style="margin-top:6px;padding-left:18px;font-size:13px;line-height:1.9">
+                <li>Semester baru — ingin guna semula bahan pengajaran lama</li>
+                <li>Kursus yang sama diajar kepada kelas atau kohort berbeza</li>
+                <li>Ingin berkongsi bahan antara pensyarah dalam kumpulan</li>
+                <li>Mahu mulakan kursus baru dengan template / struktur yang sedia ada</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">🔄</div>
+            <div class="step-content">
+              <h3>Bagaimana ia berfungsi?</h3>
+              <p>Import bekerja secara <strong>additive</strong> — kandungan dari kursus sumber disalin dan <em>ditambah</em> ke dalam kursus destinasi. Kandungan yang sedia ada dalam kursus baru <strong>tidak akan dipadam</strong>.</p>
+            </div>
+          </div>
+
+          <div class="box warn">
+            <span class="box-icon">⚠️</span>
+            <div class="box-body">
+              <strong>Perhatian:</strong>
+              Import <strong>tidak</strong> membawa rekod pelajar, skor, atau sejarah aktiviti. Ia hanya menyalin <em>kandungan pengajaran</em> sahaja — selamat untuk digunakan bagi kohort baru.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 4 — INDUKSI: Import vs Restore vs Backup
+           ====================================================== -->
+      <section class="panel" id="panel-4">
+        <div class="panel-header">
+          <div class="panel-unit-label">🔍 Induksi</div>
+          <h2 class="panel-title">Import vs Restore vs Backup</h2>
+          <p class="panel-desc">Kenal pasti perbezaan antara tiga fungsi ini supaya anda pilih yang sesuai.</p>
+        </div>
+        <div class="panel-body">
+          <table class="sim-table">
+            <thead>
+              <tr>
+                <th>Fungsi</th>
+                <th>Kandungan Kursus</th>
+                <th>Data Pelajar</th>
+                <th>Kegunaan Utama</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>📥 Import</strong></td>
+                <td><span class="tag-yes">✔ Ya</span></td>
+                <td><span class="tag-no">✘ Tidak</span></td>
+                <td>Salin bahan ke kursus lain, guna semula bahan lama</td>
+              </tr>
+              <tr>
+                <td><strong>💾 Backup</strong></td>
+                <td><span class="tag-yes">✔ Ya</span></td>
+                <td><span class="tag-yes">✔ Pilihan</span></td>
+                <td>Simpan salinan penuh kursus sebagai fail .mbz</td>
+              </tr>
+              <tr>
+                <td><strong>🔁 Restore</strong></td>
+                <td><span class="tag-yes">✔ Ya</span></td>
+                <td><span class="tag-yes">✔ Ya</span></td>
+                <td>Pulihkan kursus lengkap dari fail backup</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Ringkasan mudah:</strong>
+              Guna <b>Import</b> bila nak salin bahan ke kursus baharu. Guna <b>Backup</b> untuk simpan / arkib. Guna <b>Restore</b> untuk pulihkan kursus lengkap termasuk semua data pelajar.
+            </div>
+          </div>
+
+          <div class="box warn">
+            <span class="box-icon">⚠️</span>
+            <div class="box-body">
+              <strong>Jangan keliru!</strong>
+              Restore memerlukan fail <code>.mbz</code> yang dihasilkan oleh Backup. Import pula membaca terus dari kursus lain yang ada dalam sistem — tiada fail perlu dimuat turun atau dimuat naik.
+            </div>
+          </div>
+
+          <!-- ── Drag & Drop Activity ── -->
+          <div class="activity-header" style="margin-top:28px">
+            <div class="activity-title-row">
+              <span class="activity-badge">🎯 Aktiviti Pantas</span>
+              <h3 class="activity-title">Padankan Penerangan dengan Fungsi</h3>
+            </div>
+            <p class="activity-desc">Seret (atau <strong>klik</strong>) setiap kad ke kategori yang betul. Ini membantu anda ingat perbezaan utama antara Import, Backup dan Restore.</p>
+          </div>
+
+          <div class="sort-layout" id="activity3">
+            <div>
+              <div class="sort-items-pool-title">🃏 Penerangan Fungsi (Seret ke kanan)</div>
+              <div class="sort-items-pool" id="pool3">
+                <div class="drag-item" draggable="true" data-id="f1" onclick="handleItemClick(this,'activity3')">
+                  Salin kandungan ke kursus lain — kursus sumber <strong>kekal tidak berubah</strong>, tiada fail <code>.mbz</code> diperlukan
+                </div>
+                <div class="drag-item" draggable="true" data-id="f2" onclick="handleItemClick(this,'activity3')">
+                  Jana fail <code>.mbz</code> sebagai salinan penuh kursus — boleh sertakan data pelajar
+                </div>
+                <div class="drag-item" draggable="true" data-id="f3" onclick="handleItemClick(this,'activity3')">
+                  Muat naik fail <code>.mbz</code> untuk pulihkan kursus lengkap beserta rekod dan markah pelajar
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="sort-zones-title">📦 Kategori Fungsi (Drop di sini)</div>
+              <div class="drop-zones">
+                <div class="drop-zone" data-answer="f1" onclick="handleZoneClick(this,'activity3')">
+                  <div class="drop-zone-label">📥 Import</div>
+                </div>
+                <div class="drop-zone" data-answer="f2" onclick="handleZoneClick(this,'activity3')">
+                  <div class="drop-zone-label">💾 Backup</div>
+                </div>
+                <div class="drop-zone" data-answer="f3" onclick="handleZoneClick(this,'activity3')">
+                  <div class="drop-zone-label">🔁 Restore</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-actions">
+            <button class="btn-check" onclick="checkActivity3()">Semak Jawapan ✓</button>
+            <button class="btn-reset" onclick="resetActivity3()">⟳ Mula Semula</button>
+            <div class="activity-result" id="act3Result"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 5 — INDUKSI: Gambaran Keseluruhan Proses
+           ====================================================== -->
+      <section class="panel" id="panel-5">
+        <div class="panel-header">
+          <div class="panel-unit-label">🔍 Induksi</div>
+          <h2 class="panel-title">Gambaran Keseluruhan Proses</h2>
+          <p class="panel-desc">Lihat carta aliran penuh sebelum anda mulakan. Klik setiap nod untuk baca penerangan ringkas.</p>
+        </div>
+        <div class="panel-body">
+
+          <div class="box info" style="margin-bottom:4px">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Dua fasa utama:</strong> (A) Cipta kursus baru sebagai destinasi, kemudian (B) Import kandungan dari kursus lama.
+            </div>
+          </div>
+
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)">
+            <div style="font-size:11px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px">
+              Fasa A — Cipta Kursus Baru
+            </div>
+            <div class="flow-diagram" style="margin-bottom:16px">
+              <div class="flow-node is-source" onclick="showFlowTip(this,'Buka panel navigasi Quick Links di sudut kiri atas dashboard')">
+                <div class="flow-node-num">Langkah 1</div>
+                <div class="flow-node-label">Quick Links</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node" onclick="showFlowTip(this,'Klik My Courses untuk lihat senarai kursus anda')">
+                <div class="flow-node-num">Langkah 2</div>
+                <div class="flow-node-label">My Courses</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node is-dest" onclick="showFlowTip(this,'Klik New Course dan isi maklumat — nama, kategori, format kursus')">
+                <div class="flow-node-num">Langkah 3</div>
+                <div class="flow-node-label">New Course</div>
+              </div>
+            </div>
+            <div id="flowTip" style="display:none;background:var(--primary-light);border:1px solid #BFDBFE;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:var(--primary-dark);margin-top:4px">
+            </div>
+          </div>
+
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)">
+            <div style="font-size:11px;font-weight:700;color:var(--secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px">
+              Fasa B — Import Kandungan (6 Langkah Wizard)
+            </div>
+            <div class="flow-diagram">
+              <div class="flow-node is-source" onclick="showFlowTip(this,'Buka kursus baru dan klik Course Management → Import')">
+                <div class="flow-node-num">L1</div>
+                <div class="flow-node-label">Course Selection</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node" onclick="showFlowTip(this,'Tetapkan jenis kandungan yang ingin diimport')">
+                <div class="flow-node-num">L2</div>
+                <div class="flow-node-label">Initial Settings</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node" onclick="showFlowTip(this,'Pilih topik dan aktiviti spesifik dari kursus sumber')">
+                <div class="flow-node-num">L3</div>
+                <div class="flow-node-label">Schema Settings</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node" onclick="showFlowTip(this,'Semak ringkasan kandungan sebelum import dimulakan')">
+                <div class="flow-node-num">L4</div>
+                <div class="flow-node-label">Confirmation</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node" onclick="showFlowTip(this,'Sistem memproses dan menyalin kandungan — tunggu hingga selesai')">
+                <div class="flow-node-num">L5</div>
+                <div class="flow-node-label">Perform Import</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node is-dest" onclick="showFlowTip(this,'Import berjaya! Klik Continue untuk kembali ke kursus anda')">
+                <div class="flow-node-num">L6</div>
+                <div class="flow-node-label">Complete ✓</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box ok">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              Klik setiap nod dalam diagram di atas untuk baca penerangan ringkas bagi setiap langkah.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 6 — QUIZ INDUKSI
+           ====================================================== -->
+      <section class="panel" id="panel-6">
+        <div class="quiz-header">
+          <h2>📝 Quiz Induksi — Semak Pengetahuan Asas</h2>
+          <p>5 soalan umum berkaitan pengurusan pembelajaran digital. Ini bukan ujian — hanya untuk melihat tahap pengetahuan awal anda sebelum memulakan modul.</p>
+        </div>
+
+        <div id="inductionQuiz">
+
+          <!-- Q1 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 1 daripada 5</div>
+            <div class="quiz-q-text">Apakah yang dimaksudkan dengan LMS (Learning Management System)?</div>
+            <div class="quiz-options" data-qid="iq1" data-correct="B">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'iq1')"><span class="opt-letter">A</span><span class="opt-text">Perisian untuk mengurus kewangan sekolah</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'iq1')"><span class="opt-letter">B</span><span class="opt-text">Platform digital untuk mengurus, menyampaikan dan memantau proses pembelajaran</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'iq1')"><span class="opt-letter">C</span><span class="opt-text">Sistem kehadiran pelajar secara digital</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'iq1')"><span class="opt-letter">D</span><span class="opt-text">Aplikasi untuk membuat jadual waktu kelas</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-iq1">LMS (Learning Management System) ialah platform digital yang membolehkan pensyarah mengurus kursus, memuat naik bahan pengajaran, membuat penilaian dan memantau kemajuan pelajar.</div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 2 daripada 5</div>
+            <div class="quiz-q-text">Platform iFlick TVETMARA (iFlick) dibina menggunakan perisian LMS yang mana?</div>
+            <div class="quiz-options" data-qid="iq2" data-correct="D">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'iq2')"><span class="opt-letter">A</span><span class="opt-text">Blackboard</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'iq2')"><span class="opt-letter">B</span><span class="opt-text">Google Classroom</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'iq2')"><span class="opt-letter">C</span><span class="opt-text">Canvas</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'iq2')"><span class="opt-letter">D</span><span class="opt-text">Moodle</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-iq2">iFlick TVETMARA (iFlick) dibina di atas platform Moodle — sebuah LMS sumber terbuka (open-source) yang digunakan secara meluas oleh institusi pendidikan di seluruh dunia.</div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 3 daripada 5</div>
+            <div class="quiz-q-text">Apakah yang dimaksudkan dengan "kandungan kursus" (course content) dalam sebuah platform LMS?</div>
+            <div class="quiz-options" data-qid="iq3" data-correct="C">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'iq3')"><span class="opt-letter">A</span><span class="opt-text">Hanya buku teks yang digunakan dalam bilik kuliah</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'iq3')"><span class="opt-letter">B</span><span class="opt-text">Senarai nama pelajar yang mendaftar kursus</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'iq3')"><span class="opt-letter">C</span><span class="opt-text">Semua bahan pengajaran termasuk fail, aktiviti, video, ujian dan forum</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'iq3')"><span class="opt-letter">D</span><span class="opt-text">Maklumat peribadi pensyarah yang mengajar kursus tersebut</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-iq3">Kandungan kursus dalam LMS merangkumi semua elemen pengajaran — fail PDF, video, tugasan, kuiz, forum perbincangan, link dan sebagainya yang dimuat naik atau dicipta oleh pensyarah.</div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 4 daripada 5</div>
+            <div class="quiz-q-text">Mengapakah penting untuk menggunakan semula (reuse) bahan pengajaran dalam LMS dari semester ke semester?</div>
+            <div class="quiz-options" data-qid="iq4" data-correct="A">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'iq4')"><span class="opt-letter">A</span><span class="opt-text">Menjimatkan masa pensyarah dan memastikan konsistensi kualiti bahan pengajaran</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'iq4')"><span class="opt-letter">B</span><span class="opt-text">Kerana sistem LMS tidak membenarkan bahan baru dicipta setiap semester</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'iq4')"><span class="opt-letter">C</span><span class="opt-text">Pelajar baru hanya dibenarkan belajar dari bahan lama sahaja</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'iq4')"><span class="opt-letter">D</span><span class="opt-text">Untuk mengelakkan penggunaan internet yang berlebihan</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-iq4">Menggunakan semula bahan pengajaran menjimatkan masa persiapan, memastikan kualiti bahan yang telah diuji dan dipertingkat dapat dimanfaatkan oleh kohort pelajar berikutnya.</div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 5 daripada 5</div>
+            <div class="quiz-q-text">Dalam konteks teknologi maklumat, apakah yang berlaku apabila anda "mengimport" sesuatu data atau fail?</div>
+            <div class="quiz-options" data-qid="iq5" data-correct="B">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'iq5')"><span class="opt-letter">A</span><span class="opt-text">Data asal dipadam dari sumber dan dipindahkan ke destinasi</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'iq5')"><span class="opt-letter">B</span><span class="opt-text">Salinan data dibuat di destinasi manakala sumber asal tidak terjejas</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'iq5')"><span class="opt-letter">C</span><span class="opt-text">Data dihantar melalui emel ke destinasi</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'iq5')"><span class="opt-letter">D</span><span class="opt-text">Data dikompres dan dimampatkan untuk jimat ruang</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-iq5">Import bermaksud menyalin data dari sumber ke destinasi — sumber asal kekal tidak berubah. Konsep ini sama dalam LMS: apabila anda import kandungan kursus, kursus lama masih kekal seperti sedia ada.</div>
+          </div>
+
+          <div class="quiz-submit-row">
+            <button class="btn-submit" id="btnInductionSubmit" onclick="submitInductionQuiz()">
+              Semak Jawapan Saya ✓
+            </button>
+            <span id="inductionAnsweredCount" style="font-size:13px;color:var(--text-muted)">0 / 5 soalan dijawab</span>
+          </div>
+
+          <div class="score-card" id="inductionScore">
+            <div class="score-ring" id="inductionScoreRing">0/5</div>
+            <div class="score-msg" id="inductionScoreMsg"></div>
+            <div class="score-sub" id="inductionScoreSub"></div>
+            <button class="btn-next-after-quiz" onclick="goToPanel(7)">
+              Mulakan Unit 1 →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 7 — 1.1 Dashboard & My Courses
+           ====================================================== -->
+      <section class="panel" id="panel-7">
+        <div class="panel-header">
+          <div class="panel-unit-label">🆕 Unit 1 — Cipta Kursus Baru</div>
+          <h2 class="panel-title">Langkah 1.1 — Akses My Courses</h2>
+          <p class="panel-desc">Mulakan dari Dashboard utama iFlick dan navigasi ke senarai kursus anda.</p>
+        </div>
+        <div class="panel-body">
+          <div class="step-intro">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Login dan buka Dashboard</h3>
+              <p>Log masuk ke <strong>iFlick TVETMARA</strong>. Anda akan diarahkan ke halaman Dashboard secara automatik.</p>
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Klik Quick Links → My courses</h3>
+              <p>Di sudut kiri atas, klik ikon <strong>Quick Links</strong> untuk buka panel navigasi. Kemudian klik <strong>"My courses"</strong> dari senarai yang muncul.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/1.jpeg" alt="Dashboard iFlick dengan Quick Links dan My courses" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:14%;top:18%">
+              <div class="ann-dot">1</div>
+              <div class="ann-tip">Klik ikon Quick Links untuk buka panel navigasi</div>
+            </div>
+            <div class="ann-badge" style="left:14%;top:30%">
+              <div class="ann-dot">2</div>
+              <div class="ann-tip">Klik "My courses" untuk ke senarai kursus anda</div>
+            </div>
+          </div>
+
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Tip:</strong> Jika panel Quick Links tidak kelihatan, klik ikon <b>☰</b> di sudut kiri atas untuk tunjukkan panel navigasi.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 8 — 1.2 New Course
+           ====================================================== -->
+      <section class="panel" id="panel-8">
+        <div class="panel-header">
+          <div class="panel-unit-label">🆕 Unit 1 — Cipta Kursus Baru</div>
+          <h2 class="panel-title">Langkah 1.2 — Klik New Course</h2>
+          <p class="panel-desc">Dari halaman My Courses, buka pilihan untuk cipta kursus baharu.</p>
+        </div>
+        <div class="panel-body">
+          <div class="step-intro">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Klik ikon ⋮ (titik tiga)</h3>
+              <p>Di halaman <strong>My courses</strong>, lihat ke sudut kanan atas halaman. Klik ikon <strong>⋮</strong> (tiga titik / more options) untuk paparkan menu pilihan tambahan.</p>
+            </div>
+          </div>
+          <div class="step-intro">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Pilih "New course"</h3>
+              <p>Dari menu yang muncul, klik <strong>"New course"</strong>. Anda akan diarahkan ke borang cipta kursus baru.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/2.jpeg" alt="My courses dengan butang New course" onclick="openLightbox(this)">
+            <div class="ann-badge flip" style="left:78%;top:27%">
+              <div class="ann-dot">3</div>
+              <div class="ann-tip" style="right:38px;left:auto">Klik ikon ⋮ untuk buka menu pilihan</div>
+            </div>
+            <div class="ann-badge flip" style="left:62%;top:36%">
+              <div class="ann-dot">4</div>
+              <div class="ann-tip" style="right:38px;left:auto">Klik "New course" untuk cipta kursus baru</div>
+            </div>
+          </div>
+
+          <div class="box info">
+            <span class="box-icon">ℹ️</span>
+            <div class="box-body">
+              <strong>Hak Akses Diperlukan:</strong>
+              Butang "New course" hanya kelihatan jika anda mempunyai peranan <b>Course Creator</b>, <b>Manager</b>, atau <b>Admin</b> dalam sistem.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 9 — 1.3 Isi Maklumat Kursus
+           ====================================================== -->
+      <section class="panel" id="panel-9">
+        <div class="panel-header">
+          <div class="panel-unit-label">🆕 Unit 1 — Cipta Kursus Baru</div>
+          <h2 class="panel-title">Langkah 1.3 — Isi Maklumat Kursus</h2>
+          <p class="panel-desc">Lengkapkan borang maklumat asas kursus baru anda.</p>
+        </div>
+        <div class="panel-body">
+          <div class="step-intro">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h3>Isi maklumat asas kursus</h3>
+              <p>Borang <strong>"Edit course settings"</strong> akan dipaparkan. Isi medan wajib yang bertanda <span style="color:#B22222;font-weight:700">●</span> merah terlebih dahulu.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/image.png" alt="Borang Edit course settings iFlick" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:35%;top:23%">
+              <div class="ann-dot">1</div>
+              <div class="ann-tip">Course full name — nama penuh kursus yang dipapar kepada pelajar</div>
+            </div>
+            <div class="ann-badge" style="left:35%;top:36%">
+              <div class="ann-dot">2</div>
+              <div class="ann-tip">Course short name — nama pendek unik, digunakan dalam URL kursus</div>
+            </div>
+            <div class="ann-badge" style="left:35%;top:49%">
+              <div class="ann-dot">3</div>
+              <div class="ann-tip">Course category — pilih kategori / jabatan yang bersesuaian</div>
+            </div>
+            <div class="ann-badge" style="left:35%;top:64%">
+              <div class="ann-dot">4</div>
+              <div class="ann-tip">Course start date — tetapkan tarikh kursus mula aktif</div>
+            </div>
+          </div>
+
+          <table class="sim-table">
+            <thead>
+              <tr><th>Medan</th><th>Penerangan</th><th>Contoh</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Course full name ●</strong></td><td>Nama penuh kursus (dipapar kepada pelajar)</td><td>ELECTRICAL DESIGN PRACTICES</td></tr>
+              <tr><td><strong>Course short name ●</strong></td><td>Nama pendek unik (digunakan dalam URL)</td><td>DE040033-JD2026</td></tr>
+              <tr class="tr-highlight"><td><strong>Course category ●</strong></td><td>Kategori / jabatan kursus ini <span class="tr-highlight-note">⚠️ Pastikan pilih betul!</span></td><td><strong>2026-Jul-Dec</strong></td></tr>
+              <tr><td><strong>Course start date</strong></td><td>Tarikh kursus mula aktif</td><td>15 Jun 2026</td></tr>
+              <tr><td><strong>Course end date</strong></td><td>Tarikh kursus tamat</td><td>16 Jun 2027</td></tr>
+            </tbody>
+          </table>
+
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Tip:</strong> Medan bertanda <span style="color:#B22222;font-weight:700">●</span> merah adalah <b>wajib diisi</b>. Sistem tidak akan simpan jika medan ini kosong.
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h3>Tatal ke bawah dan klik "Save and display"</h3>
+              <p>Setelah semua maklumat diisi dengan betul, tatal ke bahagian bawah borang dan klik butang <strong>"Save and display"</strong>. Kursus baru anda akan dipaparkan dan sedia untuk diisi melalui Import.</p>
+            </div>
+          </div>
+
+          <div class="box ok">
+            <span class="box-icon">✅</span>
+            <div class="box-body">
+              <strong>Selesai Unit 1!</strong>
+              Kursus baru anda telah berjaya dicipta. Seterusnya dalam Unit 2, kita akan Import kandungan dari kursus lama ke dalam kursus baru ini.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 10 — AKTIVITI 1: Drag & Drop (Susun Langkah)
+           ====================================================== -->
+      <section class="panel" id="panel-10">
+        <div class="activity-header">
+          <h2>✏️ Aktiviti 1 — Susun Langkah!</h2>
+          <p>Uji kefahaman anda tentang Unit 1. Seret setiap kad dan jatuhkan ke kotak "Langkah" yang betul.</p>
+        </div>
+
+        <div class="activity-instruction">
+          <span>💡</span>
+          <span>Pada peranti sentuh: <b>ketuk</b> kad untuk pilih (kad bertukar biru), kemudian <b>ketuk</b> kotak destinasi untuk letakkan. Klik kad yang sama sekali lagi untuk nyahpilih.</span>
+        </div>
+
+        <div class="sort-layout" id="activity1">
+          <!-- Left: draggable items pool -->
+          <div>
+            <div class="sort-items-pool-title">🃏 Kad Langkah (Seret ke kanan)</div>
+            <div class="sort-items-pool" id="pool1">
+              <div class="drag-item" draggable="true" data-id="s1" onclick="handleItemClick(this,'activity1')">
+                Masuk ke halaman My Courses dan klik ikon ⋮, kemudian pilih <b>"New course"</b>
+              </div>
+              <div class="drag-item" draggable="true" data-id="s2" onclick="handleItemClick(this,'activity1')">
+                Isi maklumat kursus — Full Name, Short Name, Category — kemudian klik <b>"Save and display"</b>
+              </div>
+              <div class="drag-item" draggable="true" data-id="s3" onclick="handleItemClick(this,'activity1')">
+                Klik ikon <b>"Quick Links"</b> di sudut kiri atas Dashboard dan pilih <b>"My courses"</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: drop zones -->
+          <div>
+            <div class="sort-zones-title">📦 Kotak Urutan (Drop di sini)</div>
+            <div class="drop-zones">
+              <div class="drop-zone" data-answer="s3" id="dz1-1" onclick="handleZoneClick(this,'activity1')">
+                <div class="drop-zone-label">Langkah 1</div>
+              </div>
+              <div class="drop-zone" data-answer="s1" id="dz1-2" onclick="handleZoneClick(this,'activity1')">
+                <div class="drop-zone-label">Langkah 2</div>
+              </div>
+              <div class="drop-zone" data-answer="s2" id="dz1-3" onclick="handleZoneClick(this,'activity1')">
+                <div class="drop-zone-label">Langkah 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-actions">
+          <button class="btn-check" onclick="checkActivity1()">Semak Jawapan ✓</button>
+          <button class="btn-reset" onclick="resetActivity1()">⟳ Mula Semula</button>
+          <div class="activity-result" id="act1Result"></div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 11 — 2.1 Course Management
+           ====================================================== -->
+      <section class="panel" id="panel-11">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Import Kursus Lama</div>
+          <h2 class="panel-title">Langkah 2.1 — Buka Course Management</h2>
+          <p class="panel-desc">Untuk import, anda mesti berada dalam kursus BARU (destinasi) dan buka panel pengurusan kursus.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box warn">
+            <span class="box-icon">⚠️</span>
+            <div class="box-body">
+              <strong>Penting!</strong> Pastikan anda berada DALAM kursus baru yang telah dicipta tadi — bukan dalam kursus lama.
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Klik "Course management"</h3>
+              <p>Setelah masuk ke kursus baru, cari butang <strong>"Course management ⚙"</strong> di sudut kanan atas halaman kursus. Klik untuk buka panel pengurusan.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/3.jpeg" alt="Halaman kursus dengan butang Course management" onclick="openLightbox(this)">
+            <div class="ann-badge flip" style="left:75%;top:19%">
+              <div class="ann-dot">1</div>
+              <div class="ann-tip" style="right:38px;left:auto">Klik "Course management" untuk buka panel pengurusan kursus</div>
+            </div>
+          </div>
+
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Tip:</strong> Anda juga boleh akses Course management melalui tab <b>"More"</b> dalam menu navigasi kursus (kelihatan pada skrin kecil).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 12 — 2.2 Pilih Import
+           ====================================================== -->
+      <section class="panel" id="panel-12">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Import Kursus Lama</div>
+          <h2 class="panel-title">Langkah 2.2 — Pilih "Import"</h2>
+          <p class="panel-desc">Dalam modal Course Management, cari dan klik pilihan Import.</p>
+        </div>
+        <div class="panel-body">
+          <div class="step-intro">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Cari bahagian "Course" dan klik "Import"</h3>
+              <p>Panel Course Management akan muncul dengan beberapa bahagian. Di bawah bahagian <strong>"Course"</strong>, klik <strong>"Import"</strong> untuk memulakan wizard import.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/4.jpeg" alt="Modal Course Management dengan pilihan Import" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:50%;top:45%">
+              <div class="ann-dot">2</div>
+              <div class="ann-tip">Klik "Import" dalam bahagian Course untuk mulakan wizard</div>
+            </div>
+          </div>
+
+          <div class="box info">
+            <span class="box-icon">ℹ️</span>
+            <div class="box-body">
+              <strong>Import ≠ Restore:</strong>
+              Pastikan anda klik <b>Import</b> (bukan Restore). Import hanya membawa kandungan, manakala Restore membawa keseluruhan kursus termasuk data pelajar.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 13 — 2.3 Pilih Kursus Sumber
+           ====================================================== -->
+      <section class="panel" id="panel-13">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Wizard Import: Langkah 1/6</div>
+          <h2 class="panel-title">Langkah 2.3 — Pilih Kursus Sumber</h2>
+          <p class="panel-desc">Langkah pertama wizard: pilih kursus lama yang akan dijadikan sumber import.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box info">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Kemajuan Wizard:</strong>
+              <b>① Course selection</b> → ② Initial settings → ③ Schema settings → ④ Confirmation → ⑤ Perform import → ⑥ Complete
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Pilih kursus lama dari senarai</h3>
+              <p>Senarai kursus yang anda ada akses akan dipaparkan. Klik <strong>radio button</strong> di sebelah kursus yang ingin diimport kandungannya. Gunakan kotak <strong>Search</strong> jika kursus terlalu banyak.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/5.jpeg" alt="Langkah 1 Import: Pilih kursus sumber" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:42%;top:42%">
+              <div class="ann-dot">3</div>
+              <div class="ann-tip">Klik radio button untuk pilih kursus lama sebagai sumber</div>
+            </div>
+            <div class="ann-badge" style="left:46%;top:75%">
+              <div class="ann-dot">4</div>
+              <div class="ann-tip">Klik "Continue" selepas memilih kursus</div>
+            </div>
+          </div>
+
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Tip Carian:</strong> Jika mesej <em>"There are too many results"</em> muncul, taip sebahagian nama kursus dalam kotak Search dan klik butang Search semula.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 14 — 2.4 Import Settings
+           ====================================================== -->
+      <section class="panel" id="panel-14">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Wizard Import: Langkah 2/6</div>
+          <h2 class="panel-title">Langkah 2.4 — Import Settings</h2>
+          <p class="panel-desc">Tetapkan jenis kandungan yang ingin anda import dari kursus sumber.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box info">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Kemajuan Wizard:</strong>
+              ① Course selection → <b>② Initial settings</b> → ③ Schema settings → ④ Confirmation → ⑤ Perform import → ⑥ Complete
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Semak dan tetapkan pilihan import</h3>
+              <p>Halaman <strong>Import settings</strong> memaparkan senarai jenis kandungan. Semua pilihan ditanda (✅) secara lalai. Nyahpilih mana-mana yang tidak diperlukan, kemudian klik <strong>"Next"</strong>.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/6.jpeg" alt="Langkah 2 Import: Import settings" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:42%;top:32%">
+              <div class="ann-dot">4</div>
+              <div class="ann-tip">Tandakan apa yang ingin diimport — semua dipilih secara lalai</div>
+            </div>
+            <div class="ann-badge" style="left:58%;top:89%">
+              <div class="ann-dot">5</div>
+              <div class="ann-tip">Klik "Next" untuk teruskan ke Langkah 3</div>
+            </div>
+          </div>
+
+          <table class="sim-table">
+            <thead><tr><th>Pilihan</th><th>Disyorkan</th><th>Nota</th></tr></thead>
+            <tbody>
+              <tr><td>Include activities and resources</td><td><span class="tag-yes">✔ Ya</span></td><td>Semua aktiviti dan bahan kursus</td></tr>
+              <tr><td>Include files</td><td><span class="tag-yes">✔ Ya</span></td><td>Fail PDF, video, dokumen</td></tr>
+              <tr><td>Include question bank</td><td><span class="tag-yes">✔ Ya</span></td><td>Soalan quiz dan ujian</td></tr>
+              <tr><td>Include blocks</td><td><span class="tag-yes">✔ Ya</span></td><td>Blok tambahan di sidebar kursus</td></tr>
+              <tr><td>Include permission overrides</td><td><span class="tag-no">✘ Pilihan</span></td><td>Tidak perlu bagi kebanyakan kes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 15 — 2.5 Schema Settings
+           ====================================================== -->
+      <section class="panel" id="panel-15">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Wizard Import: Langkah 3/6</div>
+          <h2 class="panel-title">Langkah 2.5 — Schema Settings</h2>
+          <p class="panel-desc">Pilih topik dan aktiviti spesifik yang ingin diimport.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box info">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Kemajuan Wizard:</strong>
+              ① Course selection → ② Initial settings → <b>③ Schema settings</b> → ④ Confirmation → ⑤ Perform import → ⑥ Complete
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h3>Pilih kandungan spesifik</h3>
+              <p>Senarai semua topik dan aktiviti dari kursus sumber dipaparkan. <strong>Tandakan</strong> yang ingin diimport atau <strong>nyahpilih</strong> yang tidak diperlukan. Secara lalai, semua dipilih. Klik <strong>"Next"</strong> apabila selesai.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/7.jpeg" alt="Langkah 3 Import: Schema settings" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:40%;top:28%">
+              <div class="ann-dot">5</div>
+              <div class="ann-tip">Pilih atau nyahpilih aktiviti/topik spesifik yang ingin diimport</div>
+            </div>
+            <div class="ann-badge" style="left:54%;top:89%">
+              <div class="ann-dot">6</div>
+              <div class="ann-tip">Klik "Next" untuk teruskan ke Langkah 4</div>
+            </div>
+          </div>
+
+          <div class="box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-body">
+              <strong>Tip:</strong> Jika anda hanya mahu import beberapa topik sahaja, nyahpilih topik lain dengan klik kotak semak di bahagian tajuk topik tersebut. Ini lebih pantas dari nyahpilih satu persatu.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 16 — 2.6 Semak & Sahkan
+           ====================================================== -->
+      <section class="panel" id="panel-16">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Wizard Import: Langkah 4/6</div>
+          <h2 class="panel-title">Langkah 2.6 — Semak &amp; Sahkan</h2>
+          <p class="panel-desc">Langkah terakhir sebelum import dijalankan — semak ringkasan kandungan.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box info">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Kemajuan Wizard:</strong>
+              ① Course selection → ② Initial settings → ③ Schema settings → <b>④ Confirmation and review</b> → ⑤ Perform import → ⑥ Complete
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h3>Semak ringkasan import</h3>
+              <p>Halaman ini memaparkan ringkasan lengkap apa yang akan diimport. Semak dengan teliti untuk pastikan kandungan yang dipilih adalah betul.</p>
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">7</div>
+            <div class="step-content">
+              <h3>Klik "Perform import"</h3>
+              <p>Setelah berpuas hati, klik butang <strong>"Perform import"</strong> untuk memulakan proses. Anda juga boleh klik <strong>"Previous"</strong> untuk kembali dan buat perubahan, atau <strong>"Cancel"</strong> untuk batalkan.</p>
+            </div>
+          </div>
+
+          <div class="box warn">
+            <span class="box-icon">⚠️</span>
+            <div class="box-body">
+              <strong>Sebelum klik "Perform import":</strong>
+              Pastikan anda telah semak semula semua kandungan yang dipilih. Setelah import dimulakan, proses ini tidak boleh dihentikan di tengah jalan.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 17 — 2.7 Proses Import
+           ====================================================== -->
+      <section class="panel" id="panel-17">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Wizard Import: Langkah 5/6</div>
+          <h2 class="panel-title">Langkah 2.7 — Proses Import Berjalan</h2>
+          <p class="panel-desc">Sistem sedang memproses dan menyalin kandungan — tunggu sehingga selesai.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box info">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Kemajuan Wizard:</strong>
+              ① Course selection → ② Initial settings → ③ Schema settings → ④ Confirmation → <b>⑤ Perform import</b> → ⑥ Complete
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">8</div>
+            <div class="step-content">
+              <h3>Tunggu proses selesai</h3>
+              <p>Progress bar akan dipaparkan menunjukkan peratusan import yang selesai. Masa bergantung kepada saiz kursus — biasanya <strong>1 hingga 5 minit</strong>.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/8.jpeg" alt="Langkah 5 Import: Progress bar" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:44%;top:54%">
+              <div class="ann-dot">8</div>
+              <div class="ann-tip">Progress bar menunjukkan peratusan import yang telah selesai</div>
+            </div>
+          </div>
+
+          <div class="box warn">
+            <span class="box-icon">⚠️</span>
+            <div class="box-body">
+              <strong>Jangan tutup atau refresh halaman!</strong>
+              Semasa proses import berjalan, <b>jangan tutup tab pelayar, jangan tekan F5/refresh</b> dan jangan klik butang Back. Ini boleh menyebabkan import gagal dan kandungan rosak.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 18 — 2.8 Import Selesai
+           ====================================================== -->
+      <section class="panel" id="panel-18">
+        <div class="panel-header">
+          <div class="panel-unit-label">📥 Unit 2 — Wizard Import: Langkah 6/6</div>
+          <h2 class="panel-title">Langkah 2.8 — Import Selesai! ✅</h2>
+          <p class="panel-desc">Import berjaya — kembali ke kursus anda untuk semak kandungan baru.</p>
+        </div>
+        <div class="panel-body">
+          <div class="box info">
+            <span class="box-icon">🗺️</span>
+            <div class="box-body">
+              <strong>Kemajuan Wizard:</strong>
+              ① Course selection → ② Initial settings → ③ Schema settings → ④ Confirmation → ⑤ Perform import → <b>⑥ Complete ✓</b>
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">✓</div>
+            <div class="step-content">
+              <h3>Mesej "Import complete" dipaparkan</h3>
+              <p>Mesej berwarna hijau <em>"Import complete. Click continue to return to the course."</em> menunjukkan bahawa import telah berjaya dilaksanakan.</p>
+            </div>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="imej/9.jpeg" alt="Langkah 6 Import: Complete" onclick="openLightbox(this)">
+            <div class="ann-badge" style="left:56%;top:62%">
+              <div class="ann-dot">9</div>
+              <div class="ann-tip">Klik "Continue" untuk kembali ke halaman kursus anda</div>
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <div class="step-num">9</div>
+            <div class="step-content">
+              <h3>Klik "Continue"</h3>
+              <p>Klik butang <strong>"Continue"</strong> untuk kembali ke halaman kursus. Anda akan dapat melihat semua kandungan yang telah berjaya diimport dari kursus lama.</p>
+            </div>
+          </div>
+
+          <div class="box ok">
+            <span class="box-icon">🎉</span>
+            <div class="box-body">
+              <strong>Tahniah!</strong>
+              Import kursus berjaya diselesaikan. Semak kandungan kursus anda dan pastikan semua topik dan aktiviti diimport dengan betul sebelum mendaftarkan pelajar.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 19 — AKTIVITI 2: Drag & Drop (Padankan)
+           ====================================================== -->
+      <section class="panel" id="panel-19">
+        <div class="activity-header">
+          <h2>✏️ Aktiviti 2 — Padankan Langkah!</h2>
+          <p>Padankan setiap nama langkah wizard Import dengan penerangan yang betul. Seret nama langkah ke kotak penerangan yang berpadanan.</p>
+        </div>
+
+        <div class="activity-instruction">
+          <span>💡</span>
+          <span>Seret kad nama langkah dari kolum kiri dan jatuhkan ke kotak penerangan yang sepadan di kolum kanan. Setiap kotak hanya menerima satu kad.</span>
+        </div>
+
+        <div class="match-layout" id="activity2">
+          <!-- Left: draggable step names -->
+          <div>
+            <div class="sort-items-pool-title">📛 Nama Langkah (Seret ke kanan)</div>
+            <div class="sort-items-pool" id="pool2">
+              <div class="drag-item" draggable="true" data-id="m1" onclick="handleItemClick(this,'activity2')">① Course Selection</div>
+              <div class="drag-item" draggable="true" data-id="m2" onclick="handleItemClick(this,'activity2')">② Initial Settings</div>
+              <div class="drag-item" draggable="true" data-id="m3" onclick="handleItemClick(this,'activity2')">③ Schema Settings</div>
+              <div class="drag-item" draggable="true" data-id="m4" onclick="handleItemClick(this,'activity2')">④ Confirmation &amp; Review</div>
+              <div class="drag-item" draggable="true" data-id="m5" onclick="handleItemClick(this,'activity2')">⑤ Perform Import</div>
+              <div class="drag-item" draggable="true" data-id="m6" onclick="handleItemClick(this,'activity2')">⑥ Complete</div>
+            </div>
+          </div>
+
+          <!-- Right: drop zones with descriptions -->
+          <div>
+            <div class="sort-zones-title">📝 Penerangan (Drop di sini)</div>
+            <div class="drop-zones">
+              <div class="match-drop-zone" data-answer="m1" onclick="handleZoneClick(this,'activity2')">
+                <div class="drop-zone-label">A</div>
+                <div class="dz-description">Pilih kursus lama yang akan dijadikan sumber data import</div>
+              </div>
+              <div class="match-drop-zone" data-answer="m2" onclick="handleZoneClick(this,'activity2')">
+                <div class="drop-zone-label">B</div>
+                <div class="dz-description">Tetapkan jenis kandungan yang ingin diimport (aktiviti, fail, soalan dll.)</div>
+              </div>
+              <div class="match-drop-zone" data-answer="m3" onclick="handleZoneClick(this,'activity2')">
+                <div class="drop-zone-label">C</div>
+                <div class="dz-description">Pilih topik dan aktiviti spesifik dari kursus sumber</div>
+              </div>
+              <div class="match-drop-zone" data-answer="m4" onclick="handleZoneClick(this,'activity2')">
+                <div class="drop-zone-label">D</div>
+                <div class="dz-description">Semak ringkasan kandungan sebelum import dimulakan</div>
+              </div>
+              <div class="match-drop-zone" data-answer="m5" onclick="handleZoneClick(this,'activity2')">
+                <div class="drop-zone-label">E</div>
+                <div class="dz-description">Tunggu sistem memproses dan memindahkan kandungan kursus</div>
+              </div>
+              <div class="match-drop-zone" data-answer="m6" onclick="handleZoneClick(this,'activity2')">
+                <div class="drop-zone-label">F</div>
+                <div class="dz-description">Klik Continue untuk kembali ke halaman kursus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-actions">
+          <button class="btn-check" onclick="checkActivity2()">Semak Jawapan ✓</button>
+          <button class="btn-reset" onclick="resetActivity2()">⟳ Mula Semula</button>
+          <div class="activity-result" id="act2Result"></div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 20 — RUMUSAN
+           ====================================================== -->
+      <section class="panel" id="panel-20">
+        <div class="panel-header">
+          <div class="panel-unit-label">🏁 Penutup</div>
+          <h2 class="panel-title">Rumusan</h2>
+          <p class="panel-desc">Ringkasan semua langkah yang telah anda pelajari dalam modul ini.</p>
+        </div>
+        <div class="panel-body">
+          <div class="summary-grid">
+            <div class="summary-card">
+              <div class="summary-card-title blue">🆕 Unit 1 — Cipta Kursus Baru</div>
+              <div class="summary-steps">
+                <div class="sum-step"><div class="sum-num">1</div>Dashboard → klik Quick Links</div>
+                <div class="sum-step"><div class="sum-num">2</div>Pilih "My courses" dari menu</div>
+                <div class="sum-step"><div class="sum-num">3</div>Klik ⋮ → "New course"</div>
+                <div class="sum-step"><div class="sum-num">4</div>Isi Full Name, Short Name, Category</div>
+                <div class="sum-step"><div class="sum-num">5</div>Klik "Save and display"</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-card-title purple">📥 Unit 2 — Import Kursus Lama</div>
+              <div class="summary-steps">
+                <div class="sum-step"><div class="sum-num">1</div>Masuk kursus baru → Course Management → Import</div>
+                <div class="sum-step"><div class="sum-num">2</div>Pilih kursus sumber → Continue</div>
+                <div class="sum-step"><div class="sum-num">3</div>Tetapkan pilihan kandungan → Next</div>
+                <div class="sum-step"><div class="sum-num">4</div>Pilih aktiviti spesifik → Next</div>
+                <div class="sum-step"><div class="sum-num">5</div>Semak ringkasan → Perform import</div>
+                <div class="sum-step"><div class="sum-num">6</div>Tunggu selesai → Continue</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box ok">
+            <span class="box-icon">🔑</span>
+            <div class="box-body">
+              <strong>3 Perkara Penting untuk Diingat:</strong>
+              <ol style="margin-top:6px;padding-left:18px;font-size:13px;line-height:2">
+                <li>Import dimulakan dari kursus <b>BARU</b> (destinasi), bukan dari kursus lama</li>
+                <li>Import <b>tidak</b> memadam kandungan sedia ada dalam kursus destinasi</li>
+                <li>Import <b>tidak</b> membawa data pelajar — selamat untuk kohort baru</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 21 — PENILAIAN KENDIRI
+           ====================================================== -->
+      <section class="panel" id="panel-21">
+        <div class="quiz-header" style="background:linear-gradient(135deg,#1E3A5F 0%,#2C6FBF 100%)">
+          <h2>📋 Penilaian Kendiri</h2>
+          <p>8 soalan untuk menguji keseluruhan kefahaman anda tentang proses Import kursus dalam iFlick.</p>
+        </div>
+
+        <div id="finalQuiz">
+          <!-- Q1 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 1 daripada 8</div>
+            <div class="quiz-q-text">Di manakah butang "Quick Links" boleh didapati dalam iFlick?</div>
+            <div class="quiz-options" data-qid="fq1" data-correct="B">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq1')"><span class="opt-letter">A</span><span class="opt-text">Sudut kanan atas halaman</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq1')"><span class="opt-letter">B</span><span class="opt-text">Sudut kiri atas halaman</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq1')"><span class="opt-letter">C</span><span class="opt-text">Dalam modal Course management</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq1')"><span class="opt-letter">D</span><span class="opt-text">Di bawah logo TVETMARA</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq1">Quick Links adalah ikon navigasi di sudut kiri atas halaman, membolehkan akses pantas ke Dashboard, My Courses, dan lain-lain.</div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 2 daripada 8</div>
+            <div class="quiz-q-text">Kursus baru boleh dicipta dari halaman mana dalam iFlick?</div>
+            <div class="quiz-options" data-qid="fq2" data-correct="C">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq2')"><span class="opt-letter">A</span><span class="opt-text">Dashboard</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq2')"><span class="opt-letter">B</span><span class="opt-text">Site administration</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq2')"><span class="opt-letter">C</span><span class="opt-text">My courses</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq2')"><span class="opt-letter">D</span><span class="opt-text">All courses</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq2">Butang "New course" boleh diakses melalui menu ⋮ (tiga titik) dalam halaman My courses.</div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 3 daripada 8</div>
+            <div class="quiz-q-text">Di mana fungsi "Course management" boleh diakses semasa berada dalam sebuah kursus?</div>
+            <div class="quiz-options" data-qid="fq3" data-correct="A">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq3')"><span class="opt-letter">A</span><span class="opt-text">Sudut kanan atas halaman kursus</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq3')"><span class="opt-letter">B</span><span class="opt-text">Sudut kiri atas melalui Quick Links</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq3')"><span class="opt-letter">C</span><span class="opt-text">Dalam halaman My courses</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq3')"><span class="opt-letter">D</span><span class="opt-text">Dalam menu Site home</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq3">Butang "Course management ⚙" berada di sudut kanan atas halaman kursus, bersebelahan dengan butang "Turn editing on".</div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 4 daripada 8</div>
+            <div class="quiz-q-text">Berapa langkah dalam wizard Import Moodle / iFlick?</div>
+            <div class="quiz-options" data-qid="fq4" data-correct="C">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq4')"><span class="opt-letter">A</span><span class="opt-text">4 langkah</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq4')"><span class="opt-letter">B</span><span class="opt-text">5 langkah</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq4')"><span class="opt-letter">C</span><span class="opt-text">6 langkah</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq4')"><span class="opt-letter">D</span><span class="opt-text">8 langkah</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq4">Wizard Import mempunyai tepat 6 langkah: Course selection → Initial settings → Schema settings → Confirmation → Perform import → Complete.</div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 5 daripada 8</div>
+            <div class="quiz-q-text">Apakah yang TIDAK dibawa oleh fungsi Import?</div>
+            <div class="quiz-options" data-qid="fq5" data-correct="D">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq5')"><span class="opt-letter">A</span><span class="opt-text">Aktiviti dan sumber kursus</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq5')"><span class="opt-letter">B</span><span class="opt-text">Fail PDF dan dokumen</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq5')"><span class="opt-letter">C</span><span class="opt-text">Soalan dalam Question Bank</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq5')"><span class="opt-letter">D</span><span class="opt-text">Data dan rekod pelajar</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq5">Import hanya membawa kandungan pengajaran. Data pelajar seperti skor, rekod kehadiran, dan penyerahan tugasan TIDAK diimport.</div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 6 daripada 8</div>
+            <div class="quiz-q-text">Apakah tujuan "Schema Settings" (Langkah 3) dalam wizard Import?</div>
+            <div class="quiz-options" data-qid="fq6" data-correct="B">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq6')"><span class="opt-letter">A</span><span class="opt-text">Pilih kursus lama yang nak diimport</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq6')"><span class="opt-letter">B</span><span class="opt-text">Pilih topik dan aktiviti spesifik yang ingin diimport</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq6')"><span class="opt-letter">C</span><span class="opt-text">Semak ringkasan sebelum import dilaksanakan</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq6')"><span class="opt-letter">D</span><span class="opt-text">Tetapkan jenis fail yang dibenarkan</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq6">Schema Settings membolehkan anda memilih atau nyahpilih topik dan aktiviti tertentu — bukan semua kandungan perlu diimport jika tidak dikehendaki.</div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 7 daripada 8</div>
+            <div class="quiz-q-text">Apakah yang berlaku kepada kandungan SEDIA ADA dalam kursus destinasi apabila Import dilakukan?</div>
+            <div class="quiz-options" data-qid="fq7" data-correct="A">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq7')"><span class="opt-letter">A</span><span class="opt-text">Kandungan baru ditambah — kandungan lama tidak dipadam</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq7')"><span class="opt-letter">B</span><span class="opt-text">Kandungan lama dipadam dan digantikan sepenuhnya</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq7')"><span class="opt-letter">C</span><span class="opt-text">Sistem bertanya kepada pengguna sama ada mahu padam atau simpan</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq7')"><span class="opt-letter">D</span><span class="opt-text">Import tidak boleh dilakukan jika kursus sudah mempunyai kandungan</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq7">Import bersifat additive — kandungan dari kursus sumber ditambah di atas kandungan yang sedia ada. Tiada pemadaman berlaku secara automatik.</div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="quiz-question">
+            <div class="quiz-q-num">Soalan 8 daripada 8</div>
+            <div class="quiz-q-text">Apakah mesej yang dipaparkan apabila import berjaya diselesaikan?</div>
+            <div class="quiz-options" data-qid="fq8" data-correct="B">
+              <div class="quiz-option" data-val="A" onclick="selectOpt(this,'fq8')"><span class="opt-letter">A</span><span class="opt-text">"Import successful. Please restart your course."</span></div>
+              <div class="quiz-option" data-val="B" onclick="selectOpt(this,'fq8')"><span class="opt-letter">B</span><span class="opt-text">"Import complete. Click continue to return to the course."</span></div>
+              <div class="quiz-option" data-val="C" onclick="selectOpt(this,'fq8')"><span class="opt-letter">C</span><span class="opt-text">"Course imported. Please refresh the page."</span></div>
+              <div class="quiz-option" data-val="D" onclick="selectOpt(this,'fq8')"><span class="opt-letter">D</span><span class="opt-text">"Process complete. You may close this window."</span></div>
+            </div>
+            <div class="quiz-feedback" id="fb-fq8">Mesej tepat yang dipaparkan ialah "Import complete. Click continue to return to the course." dengan butang Continue berwarna merah.</div>
+          </div>
+
+          <div class="quiz-submit-row">
+            <button class="btn-submit" id="btnFinalSubmit" onclick="submitFinalQuiz()">
+              Hantar Penilaian Saya ✓
+            </button>
+            <span id="finalAnsweredCount" style="font-size:13px;color:var(--text-muted)">0 / 8 soalan dijawab</span>
+          </div>
+
+          <div class="score-card" id="finalScore">
+            <div class="score-ring" id="finalScoreRing">0/8</div>
+            <div class="score-msg" id="finalScoreMsg"></div>
+            <div class="score-sub" id="finalScoreSub"></div>
+            <button class="btn-next-after-quiz" onclick="goToPanel(22)">
+              Lihat Sijil Tahniah 🎉
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           PANEL 22 — TAHNIAH
+           ====================================================== -->
+      <section class="panel" id="panel-22">
+        <div class="congrats-wrap">
+          <div class="congrats-icon">🎉</div>
+          <h2 class="congrats-title">Tahniah! Anda Berjaya!</h2>
+          <p class="congrats-msg">
+            Anda telah berjaya menamatkan keseluruhan modul <strong>Panduan Cipta &amp; Import Kursus dalam iFlick</strong>. Anda kini sudah bersedia untuk menguruskan kursus dalam iFlick TVETMARA dengan lebih yakin dan berkesan.
+          </p>
+
+          <div class="congrats-achievements">
+            <div class="badge-achievement">
+              <div class="badge-achievement-icon">📚</div>
+              <div class="badge-achievement-label">Modul Tamat</div>
+              <div class="badge-achievement-sub">23 langkah selesai</div>
+            </div>
+            <div class="badge-achievement">
+              <div class="badge-achievement-icon">🔍</div>
+              <div class="badge-achievement-label">Induksi Lulus</div>
+              <div class="badge-achievement-sub">Quiz Induksi</div>
+            </div>
+            <div class="badge-achievement">
+              <div class="badge-achievement-icon">🎯</div>
+              <div class="badge-achievement-label">Aktiviti Siap</div>
+              <div class="badge-achievement-sub">2 Drag &amp; Drop</div>
+            </div>
+            <div class="badge-achievement">
+              <div class="badge-achievement-icon">🏆</div>
+              <div class="badge-achievement-label">Penilaian Lulus</div>
+              <div class="badge-achievement-sub">Penilaian Kendiri</div>
+            </div>
+          </div>
+
+          <div class="box ok" style="max-width:480px;margin:0 auto 20px;text-align:left">
+            <span class="box-icon">🔑</span>
+            <div class="box-body">
+              <strong>Anda sudah tahu cara untuk:</strong>
+              <ul style="margin-top:6px;padding-left:18px;font-size:13px;line-height:2">
+                <li>Cipta kursus baru dalam iFlick</li>
+                <li>Buka Course Management dan pilih Import</li>
+                <li>Lengkapkan 6 langkah wizard Import</li>
+                <li>Bezakan Import, Backup, dan Restore</li>
+              </ul>
+            </div>
+          </div>
+
+          <button class="btn-restart" onclick="restartSIM()">
+            ↺ Ulang Kaji dari Awal
+          </button>
+        </div>
+      </section>
+
+    </div><!-- /panels-wrap -->
+
+    <!-- Bottom navigation -->
+    <footer class="bottom-nav">
+      <button class="btn-nav btn-prev" id="prevBtn" onclick="navigate(-1)">
+        ← Sebelumnya
+      </button>
+      <div class="nav-middle">
+        <div class="nav-step-label" id="navLabel">Langkah 1 / 23</div>
+        <div class="nav-mini-dots" id="navMiniDots"></div>
+      </div>
+      <button class="btn-nav btn-next" id="nextBtn" onclick="navigate(1)">
+        Seterusnya →
+      </button>
+    </footer>
+
+  </main>
+</div><!-- /app-wrapper -->
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+</div>
+
+<!-- Confetti container -->
+<div class="confetti-container" id="confettiContainer"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
